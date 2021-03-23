@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const Item = (props) => {
   const { content, onClickDelete, onChangeCheck, isDone } = props;
-  console.log(props);
   return (
     <li>
       <input type="checkbox" onChange={onChangeCheck} />

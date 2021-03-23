@@ -3,13 +3,18 @@ import React, { useState } from "react";
 import { Form } from "./component/Form";
 import { List } from "./component/List";
 
+import shortid from "shortid";
+
 export const App = () => {
   const [todoText, setTodoText] = useState("");
   const [todos, setTodos] = useState([]);
 
   const onClickAdd = () => {
     if (todoText === "") return;
-    const newTodos = [...todos, { content: todoText, isDone: false }];
+    const newTodos = [
+      ...todos,
+      { content: todoText, isDone: false, id: shortid.generate() },
+    ];
 
     setTodos(newTodos);
     setTodoText("");
@@ -30,7 +35,6 @@ export const App = () => {
     } else {
       newTodos[index].isDone = false;
     }
-    console.log(newTodos);
     setTodos(newTodos);
   };
 

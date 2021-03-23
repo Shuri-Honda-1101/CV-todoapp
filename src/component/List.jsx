@@ -12,7 +12,7 @@ export const List = (props) => {
             onChangeCheck={() => onChangeCheck(index)}
             content={todo.content}
             isDone={todo.isDone}
-            key={index}
+            key={todo.id}
             onClickDelete={() => onClickDelete(index)}
           />
         );
